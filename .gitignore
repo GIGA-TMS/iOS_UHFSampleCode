@@ -36,6 +36,10 @@ xcuserdata/
 #
 # Pods/
 
+# Cocoapods
+Pods/
+TS800_Japan/Pods/
+
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
@@ -52,7 +56,7 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/Preview.html
-fastlane/screenshots/**/*.png
+fastlane/screenshots
 fastlane/test_output
 
 # Code Injection
