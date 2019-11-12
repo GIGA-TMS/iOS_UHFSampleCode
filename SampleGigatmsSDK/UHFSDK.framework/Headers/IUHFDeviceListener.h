@@ -189,7 +189,7 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 
 @protocol IUHFDeviceListener <NSObject>
 
-
+@optional
 /**
  The operating of invokeApi is success.
 
@@ -290,7 +290,7 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 -(void)didGetBuzzerOperationMode:(BuzzerOperationMode) bom;
 
 
-@optional
+
 /**
  Indicates that the reader reads a new tag.
  If the remote device is invertory and has detected a tag.
@@ -316,6 +316,7 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 -(void)didGetTagPresentRepeatInterval:(int) period;
 -(void)didGetTagRemoveThreshold:(int) missingInventoryThreshold;
 
+-(void)didGetInventoryRoundInterval:(int) tenMilliSeconds;
 
 
 #pragma mark - Special Command Callback

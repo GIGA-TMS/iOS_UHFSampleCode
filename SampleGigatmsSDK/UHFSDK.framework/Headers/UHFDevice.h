@@ -396,8 +396,27 @@ typedef NS_ENUM(Byte, BuzzerAction){
 -(void)cmdGetTagRemoveThreshold:(BOOL)isTemp;
 
 
+/// Set the InventoryRoundInterval
+/// /// @param isTemp True value specifies the changes are temporary overwrides for settings. The changes are not saved into the EEPROM and take immediate effect (no rebooting required). False value specifies the changes are permanently overwrides for settings And also saved into the EEPROM. The changes will keep after rebooting the device.
+/// @param tenMilliSeconds The period to start an inventory round. Range: 0~254*10s. 255 represent 0;
+-(void)cmdSet:(BOOL)isTemp InventoryRoundInterval:(int)tenMilliSeconds;
 
 
+/// Get the InventoryRoundInterval
+/// @param isTemp True value specifies the changes are temporary overwrides for settings. The changes are not saved into the EEPROM and take immediate effect (no rebooting required). False value specifies the changes are permanently overwrides for settings And also saved into the EEPROM. The changes will keep after rebooting the device.
+-(void)cmdGetInventoryRoundInterval:(BOOL)isTemp;
+
+
+/// Use `accessPassword` to Lock the first tag that is inventoried.
+/// @param accessPassword Access Password
+/// @param lockInfos The Lock Action to specified memory bank. see GNPLockInfos.h
+-(void)cmdLockTag:(NSString*)accessPassword LockInfos:(NSMutableArray*)lockInfos;
+
+
+/// Lock the first tag that is inventoried.
+/// The Access password is decided by the remote connected device.
+/// @param lockInfos The Lock Action to specified memory bank. see GNPLockInfos.h
+-(void)cmdLockTag:(NSMutableArray*)lockInfos;
 @end
 
 NS_ASSUME_NONNULL_END

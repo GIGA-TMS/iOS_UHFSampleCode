@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		119A7DF777A0FC907CFDD44E /* libPods-SampleGigatmsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8644EAA08B23D2419994F65 /* libPods-SampleGigatmsSDK.a */; };
-		4115F6CA2202DDD50056E8F3 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4115F6C92202DDD50056E8F3 /* LocalAuthentication.framework */; };
 		412AEFC4225DDABF001C220D /* DevDetailTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412AEFC3225DDABF001C220D /* DevDetailTabBarViewController.m */; };
 		4155504D22533321009CD9FD /* BaseDevItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4155504C22533321009CD9FD /* BaseDevItemTableViewCell.m */; };
 		41555050225337C9009CD9FD /* ScanBaseDevTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4155504F225337C9009CD9FD /* ScanBaseDevTableViewController.m */; };
@@ -17,16 +15,13 @@
 		4155505422536EEA009CD9FD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */; };
 		4155505522536EEA009CD9FD /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4162742B2314D46400DDFBAE /* ScanDevV2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4162742A2314D46400DDFBAE /* ScanDevV2ViewController.m */; };
+		4162742F23164D9500DDFBAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4162742D23164D9400DDFBAE /* GoogleService-Info.plist */; };
 		4168F3C62260312C00E059ED /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3C52260312C00E059ED /* InventoryViewController.m */; };
 		4168F3C92260314C00E059ED /* ReadWriteTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3C82260314C00E059ED /* ReadWriteTagViewController.m */; };
 		4168F3CC2260316600E059ED /* Setting1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3CB2260316600E059ED /* Setting1ViewController.m */; };
 		4168F3CF2260317300E059ED /* Setting2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3CE2260317300E059ED /* Setting2ViewController.m */; };
 		4168F3D22264796F00E059ED /* TagItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3D12264796F00E059ED /* TagItemTableViewCell.m */; };
 		4168F3D522684D6F00E059ED /* DevConnStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3D422684D6F00E059ED /* DevConnStatusViewController.m */; };
-		418C68C021912DFA00EBC217 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */; };
-		418C68C121912DFA00EBC217 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		418E482A222D1A200021FE15 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */; };
-		418E482B222D1A200021FE15 /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41A5CC122252096D00FF5953 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC112252096D00FF5953 /* AppDelegate.m */; };
 		41A5CC1B2252096D00FF5953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A5CC192252096D00FF5953 /* Main.storyboard */; };
 		41A5CC1D2252096F00FF5953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A5CC1C2252096F00FF5953 /* Assets.xcassets */; };
@@ -34,8 +29,9 @@
 		41A5CC232252096F00FF5953 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC222252096F00FF5953 /* main.m */; };
 		41A5CC2D2252097000FF5953 /* UHFSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC2C2252097000FF5953 /* UHFSampleTests.m */; };
 		41A5CC382252097000FF5953 /* UHFSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC372252097000FF5953 /* UHFSampleUITests.m */; };
-		41CC5F372201A2FA00569512 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CC5F362201A2FA00569512 /* AVFoundation.framework */; };
-		908384BC39E1635CD0C99C5B /* libPods-LoginReaderDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9748CEA67BB19BC88316940D /* libPods-LoginReaderDemo.a */; };
+		41ADAA9E237158EF00D6314C /* TwoParameterAPIViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ADAA9B237158EF00D6314C /* TwoParameterAPIViewCell.m */; };
+		41ADAAA0237158EF00D6314C /* TwoParameterAPIViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ADAA9C237158EF00D6314C /* TwoParameterAPIViewCell.xib */; };
+		41BDD4762371747400171592 /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BDD4752371747400171592 /* testViewController.m */; };
 		B426DDF9D18533366938BF78 /* libPods-UHFSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085813F69E08950A35125222 /* libPods-UHFSample.a */; };
 /* End PBXBuildFile section */
 
@@ -54,48 +50,9 @@
 			remoteGlobalIDString = 41A5CC0D2252096D00FF5953;
 			remoteInfo = UHFSample;
 		};
-		41B4405B2201943300836E40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41E40DF620871BBE0062A880 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 41B4403F2201943100836E40;
-			remoteInfo = LoginReaderDemo;
-		};
-		41B440662201943300836E40 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41E40DF620871BBE0062A880 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 41B4403F2201943100836E40;
-			remoteInfo = LoginReaderDemo;
-		};
-		41E40E1A20871BBF0062A880 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41E40DF620871BBE0062A880 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 41E40DFD20871BBE0062A880;
-			remoteInfo = SampleGigatmsSDK;
-		};
-		41E40E2520871BBF0062A880 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 41E40DF620871BBE0062A880 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 41E40DFD20871BBE0062A880;
-			remoteInfo = SampleGigatmsSDK;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4142644F211ADCD4007F2452 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				418C68C121912DFA00EBC217 /* CocoaAsyncSocket.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4155505622536EEA009CD9FD /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -106,27 +63,6 @@
 				4155505322536EEA009CD9FD /* UHFSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		418E4827222D0F070021FE15 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				418E482B222D1A200021FE15 /* CocoaAsyncSocket.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41F89DF4209FFAFB00997DB0 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-			);
-			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -148,6 +84,7 @@
 		4155504F225337C9009CD9FD /* ScanBaseDevTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ScanBaseDevTableViewController.m; path = UITools/ScanBaseDevTableViewController.m; sourceTree = "<group>"; };
 		416274292314D46400DDFBAE /* ScanDevV2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ScanDevV2ViewController.h; path = UITools/ScanDevV2ViewController.h; sourceTree = "<group>"; };
 		4162742A2314D46400DDFBAE /* ScanDevV2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ScanDevV2ViewController.m; path = UITools/ScanDevV2ViewController.m; sourceTree = "<group>"; };
+		4162742D23164D9400DDFBAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4168F3C42260312C00E059ED /* InventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
 		4168F3C52260312C00E059ED /* InventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
 		4168F3C72260314C00E059ED /* ReadWriteTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadWriteTagViewController.h; sourceTree = "<group>"; };
@@ -177,14 +114,13 @@
 		41A5CC332252097000FF5953 /* UHFSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UHFSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A5CC372252097000FF5953 /* UHFSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHFSampleUITests.m; sourceTree = "<group>"; };
 		41A5CC392252097000FF5953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41B440402201943100836E40 /* LoginReaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginReaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		41B4405A2201943300836E40 /* LoginReaderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginReaderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		41B440652201943300836E40 /* LoginReaderDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginReaderDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41ADAA9A237158EF00D6314C /* TwoParameterAPIViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoParameterAPIViewCell.h; sourceTree = "<group>"; };
+		41ADAA9B237158EF00D6314C /* TwoParameterAPIViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoParameterAPIViewCell.m; sourceTree = "<group>"; };
+		41ADAA9C237158EF00D6314C /* TwoParameterAPIViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoParameterAPIViewCell.xib; sourceTree = "<group>"; };
+		41BDD4742371747400171592 /* testViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		41BDD4752371747400171592 /* testViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		41BDD4772372791300171592 /* UHFSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UHFSample-Bridging-Header.h"; sourceTree = "<group>"; };
 		41CC5F362201A2FA00569512 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		41E40DFE20871BBE0062A880 /* SampleGigatmsSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleGigatmsSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		41E40E1920871BBF0062A880 /* SampleGigatmsSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleGigatmsSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		41E40E2420871BBF0062A880 /* SampleGigatmsSDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleGigatmsSDKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		423514CE85D2BFA9A5C7AD9B /* Pods-LoginReaderDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginReaderDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginReaderDemo/Pods-LoginReaderDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		475549469811B20CB791886A /* libPods-TS800Sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TS800Sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E88C00114C797B553D7197A /* libPods-SampleGigatmsSDKTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SampleGigatmsSDKTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,54 +155,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		41A5CC302252097000FF5953 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41B4403D2201943100836E40 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4115F6CA2202DDD50056E8F3 /* LocalAuthentication.framework in Frameworks */,
-				41CC5F372201A2FA00569512 /* AVFoundation.framework in Frameworks */,
-				418E482A222D1A200021FE15 /* CocoaAsyncSocket.framework in Frameworks */,
-				908384BC39E1635CD0C99C5B /* libPods-LoginReaderDemo.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41B440572201943300836E40 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41B440622201943300836E40 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40DFB20871BBE0062A880 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				418C68C021912DFA00EBC217 /* CocoaAsyncSocket.framework in Frameworks */,
-				119A7DF777A0FC907CFDD44E /* libPods-SampleGigatmsSDK.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40E1620871BBF0062A880 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40E2120871BBF0062A880 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,6 +196,11 @@
 				41A5CC102252096D00FF5953 /* AppDelegate.h */,
 				41A5CC112252096D00FF5953 /* AppDelegate.m */,
 				41A5CC192252096D00FF5953 /* Main.storyboard */,
+				41BDD4742371747400171592 /* testViewController.h */,
+				41BDD4752371747400171592 /* testViewController.m */,
+				41ADAA9A237158EF00D6314C /* TwoParameterAPIViewCell.h */,
+				41ADAA9B237158EF00D6314C /* TwoParameterAPIViewCell.m */,
+				41ADAA9C237158EF00D6314C /* TwoParameterAPIViewCell.xib */,
 				41A5CC1C2252096F00FF5953 /* Assets.xcassets */,
 				41A5CC1E2252096F00FF5953 /* LaunchScreen.storyboard */,
 				41A5CC212252096F00FF5953 /* Info.plist */,
@@ -350,6 +243,7 @@
 		41E40DF520871BBE0062A880 = {
 			isa = PBXGroup;
 			children = (
+				4162742D23164D9400DDFBAE /* GoogleService-Info.plist */,
 				41A5CC0F2252096D00FF5953 /* UHFSample */,
 				41A5CC2B2252097000FF5953 /* UHFSampleTests */,
 				41A5CC362252097000FF5953 /* UHFSampleUITests */,
@@ -364,12 +258,6 @@
 		41E40DFF20871BBE0062A880 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				41E40DFE20871BBE0062A880 /* SampleGigatmsSDK.app */,
-				41E40E1920871BBF0062A880 /* SampleGigatmsSDKTests.xctest */,
-				41E40E2420871BBF0062A880 /* SampleGigatmsSDKUITests.xctest */,
-				41B440402201943100836E40 /* LoginReaderDemo.app */,
-				41B4405A2201943300836E40 /* LoginReaderDemoTests.xctest */,
-				41B440652201943300836E40 /* LoginReaderDemoUITests.xctest */,
 				41A5CC0E2252096D00FF5953 /* UHFSample.app */,
 				41A5CC282252097000FF5953 /* UHFSampleTests.xctest */,
 				41A5CC332252097000FF5953 /* UHFSampleUITests.xctest */,
@@ -471,119 +359,6 @@
 			productReference = 41A5CC332252097000FF5953 /* UHFSampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		41B4403F2201943100836E40 /* LoginReaderDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41B4406C2201943300836E40 /* Build configuration list for PBXNativeTarget "LoginReaderDemo" */;
-			buildPhases = (
-				6161D63F0F2FF00720C1CE99 /* [CP] Check Pods Manifest.lock */,
-				41B4403C2201943100836E40 /* Sources */,
-				41B4403D2201943100836E40 /* Frameworks */,
-				41B4403E2201943100836E40 /* Resources */,
-				418E4827222D0F070021FE15 /* Embed Frameworks */,
-				41C53FEE224CAD83003C96BA /* setAppVerinLaunchScreen */,
-				41A5CC09224DEBD100FF5953 /* Fabric */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = LoginReaderDemo;
-			productName = LoginReaderDemo;
-			productReference = 41B440402201943100836E40 /* LoginReaderDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
-		41B440592201943300836E40 /* LoginReaderDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41B4406F2201943300836E40 /* Build configuration list for PBXNativeTarget "LoginReaderDemoTests" */;
-			buildPhases = (
-				41B440562201943300836E40 /* Sources */,
-				41B440572201943300836E40 /* Frameworks */,
-				41B440582201943300836E40 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				41B4405C2201943300836E40 /* PBXTargetDependency */,
-			);
-			name = LoginReaderDemoTests;
-			productName = LoginReaderDemoTests;
-			productReference = 41B4405A2201943300836E40 /* LoginReaderDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		41B440642201943300836E40 /* LoginReaderDemoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41B440722201943300836E40 /* Build configuration list for PBXNativeTarget "LoginReaderDemoUITests" */;
-			buildPhases = (
-				41B440612201943300836E40 /* Sources */,
-				41B440622201943300836E40 /* Frameworks */,
-				41B440632201943300836E40 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				41B440672201943300836E40 /* PBXTargetDependency */,
-			);
-			name = LoginReaderDemoUITests;
-			productName = LoginReaderDemoUITests;
-			productReference = 41B440652201943300836E40 /* LoginReaderDemoUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		41E40DFD20871BBE0062A880 /* SampleGigatmsSDK */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41E40E2D20871BBF0062A880 /* Build configuration list for PBXNativeTarget "SampleGigatmsSDK" */;
-			buildPhases = (
-				EE18E2F417E360D7337582DC /* [CP] Check Pods Manifest.lock */,
-				41E40DFA20871BBE0062A880 /* Sources */,
-				41E40DFB20871BBE0062A880 /* Frameworks */,
-				41E40DFC20871BBE0062A880 /* Resources */,
-				41F89DF4209FFAFB00997DB0 /* Embed App Extensions */,
-				4142644F211ADCD4007F2452 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SampleGigatmsSDK;
-			productName = SampleGigatmsSDK;
-			productReference = 41E40DFE20871BBE0062A880 /* SampleGigatmsSDK.app */;
-			productType = "com.apple.product-type.application";
-		};
-		41E40E1820871BBF0062A880 /* SampleGigatmsSDKTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41E40E3020871BBF0062A880 /* Build configuration list for PBXNativeTarget "SampleGigatmsSDKTests" */;
-			buildPhases = (
-				41E40E1520871BBF0062A880 /* Sources */,
-				41E40E1620871BBF0062A880 /* Frameworks */,
-				41E40E1720871BBF0062A880 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				41E40E1B20871BBF0062A880 /* PBXTargetDependency */,
-			);
-			name = SampleGigatmsSDKTests;
-			productName = SampleGigatmsSDKTests;
-			productReference = 41E40E1920871BBF0062A880 /* SampleGigatmsSDKTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		41E40E2320871BBF0062A880 /* SampleGigatmsSDKUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 41E40E3320871BBF0062A880 /* Build configuration list for PBXNativeTarget "SampleGigatmsSDKUITests" */;
-			buildPhases = (
-				41E40E2020871BBF0062A880 /* Sources */,
-				41E40E2120871BBF0062A880 /* Frameworks */,
-				41E40E2220871BBF0062A880 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				41E40E2620871BBF0062A880 /* PBXTargetDependency */,
-			);
-			name = SampleGigatmsSDKUITests;
-			productName = SampleGigatmsSDKUITests;
-			productReference = 41E40E2420871BBF0062A880 /* SampleGigatmsSDKUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -610,28 +385,6 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 41A5CC0D2252096D00FF5953;
 					};
-					41B4403F2201943100836E40 = {
-						CreatedOnToolsVersion = 10.1;
-					};
-					41B440592201943300836E40 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 41B4403F2201943100836E40;
-					};
-					41B440642201943300836E40 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 41B4403F2201943100836E40;
-					};
-					41E40DFD20871BBE0062A880 = {
-						CreatedOnToolsVersion = 9.3;
-					};
-					41E40E1820871BBF0062A880 = {
-						CreatedOnToolsVersion = 9.3;
-						TestTargetID = 41E40DFD20871BBE0062A880;
-					};
-					41E40E2320871BBF0062A880 = {
-						CreatedOnToolsVersion = 9.3;
-						TestTargetID = 41E40DFD20871BBE0062A880;
-					};
 				};
 			};
 			buildConfigurationList = 41E40DF920871BBE0062A880 /* Build configuration list for PBXProject "SampleGigatmsSDK" */;
@@ -647,12 +400,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				41E40DFD20871BBE0062A880 /* SampleGigatmsSDK */,
-				41E40E1820871BBF0062A880 /* SampleGigatmsSDKTests */,
-				41E40E2320871BBF0062A880 /* SampleGigatmsSDKUITests */,
-				41B4403F2201943100836E40 /* LoginReaderDemo */,
-				41B440592201943300836E40 /* LoginReaderDemoTests */,
-				41B440642201943300836E40 /* LoginReaderDemoUITests */,
 				41A5CC0D2252096D00FF5953 /* UHFSample */,
 				41A5CC272252097000FF5953 /* UHFSampleTests */,
 				41A5CC322252097000FF5953 /* UHFSampleUITests */,
@@ -666,7 +413,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A5CC202252096F00FF5953 /* LaunchScreen.storyboard in Resources */,
+				4162742F23164D9500DDFBAE /* GoogleService-Info.plist in Resources */,
 				41A5CC1D2252096F00FF5953 /* Assets.xcassets in Resources */,
+				41ADAAA0237158EF00D6314C /* TwoParameterAPIViewCell.xib in Resources */,
 				41A5CC1B2252096D00FF5953 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -679,48 +428,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		41A5CC312252097000FF5953 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41B4403E2201943100836E40 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41B440582201943300836E40 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41B440632201943300836E40 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40DFC20871BBE0062A880 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40E1720871BBF0062A880 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40E2220871BBF0062A880 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -747,60 +454,6 @@
 			shellPath = /bin/sh;
 			shellScript = "#./Fabric.framework/run 74dbd095576795293334fd2ed0dfe4bb6c3fc085 44fb216eb2688b18153ed8208d7ac4261bb2de681caf2c96cf8d3ceba2351b36\n";
 		};
-		41A5CC09224DEBD100FF5953 /* Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Fabric;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 74dbd095576795293334fd2ed0dfe4bb6c3fc085 44fb216eb2688b18153ed8208d7ac4261bb2de681caf2c96cf8d3ceba2351b36\n";
-		};
-		41C53FEE224CAD83003C96BA /* setAppVerinLaunchScreen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = setAppVerinLaunchScreen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#   ON/OFF Script Toggle (script ON with #, script OFF without #)\n#exit 0\n\n#   Increment Build Number Bool (Increment ON with true, increment OFF with false)\nshouldIncrement=true\n\n#   App vesion / Build version constants\nversionNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n\n#   Increment build number\nif [ \"$shouldIncrement\" = true ]; then\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\nfi\n\n#   Output version & build numbers into a label on LaunchScreen.storyboard\nsed -i bak -e \"/userLabel=\\\"APP_VERSION\\\"/s/text=\\\"[^\\\"]*\\\"/text=\\\"Version: $versionNumber Build: $buildNumber\\\"/\" $PROJECT_DIR/$PROJECT_NAME/Base.lproj/LaunchScreen.storyboard\n\n";
-		};
-		6161D63F0F2FF00720C1CE99 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LoginReaderDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A47776255611B401A9627E6F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -817,28 +470,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-UHFSample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE18E2F417E360D7337582DC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SampleGigatmsSDK-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -864,6 +495,8 @@
 				4155504D22533321009CD9FD /* BaseDevItemTableViewCell.m in Sources */,
 				4168F3D522684D6F00E059ED /* DevConnStatusViewController.m in Sources */,
 				4162742B2314D46400DDFBAE /* ScanDevV2ViewController.m in Sources */,
+				41BDD4762371747400171592 /* testViewController.m in Sources */,
+				41ADAA9E237158EF00D6314C /* TwoParameterAPIViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,48 +516,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41B4403C2201943100836E40 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41B440562201943300836E40 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41B440612201943300836E40 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40DFA20871BBE0062A880 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40E1520871BBF0062A880 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		41E40E2020871BBF0062A880 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -937,26 +528,6 @@
 			isa = PBXTargetDependency;
 			target = 41A5CC0D2252096D00FF5953 /* UHFSample */;
 			targetProxy = 41A5CC342252097000FF5953 /* PBXContainerItemProxy */;
-		};
-		41B4405C2201943300836E40 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 41B4403F2201943100836E40 /* LoginReaderDemo */;
-			targetProxy = 41B4405B2201943300836E40 /* PBXContainerItemProxy */;
-		};
-		41B440672201943300836E40 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 41B4403F2201943100836E40 /* LoginReaderDemo */;
-			targetProxy = 41B440662201943300836E40 /* PBXContainerItemProxy */;
-		};
-		41E40E1B20871BBF0062A880 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 41E40DFD20871BBE0062A880 /* SampleGigatmsSDK */;
-			targetProxy = 41E40E1A20871BBF0062A880 /* PBXContainerItemProxy */;
-		};
-		41E40E2620871BBF0062A880 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 41E40DFD20871BBE0062A880 /* SampleGigatmsSDK */;
-			targetProxy = 41E40E2520871BBF0062A880 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1135,146 +706,6 @@
 			};
 			name = Release;
 		};
-		41B4406D2201943300836E40 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 423514CE85D2BFA9A5C7AD9B /* Pods-LoginReaderDemo.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/CocoaAsyncSocket",
-				);
-				INFOPLIST_FILE = LoginReaderDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.LoginReaderDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s x86_64";
-			};
-			name = Debug;
-		};
-		41B4406E2201943300836E40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB99E550186475171503A44C /* Pods-LoginReaderDemo.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/CocoaAsyncSocket",
-				);
-				INFOPLIST_FILE = LoginReaderDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.LoginReaderDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s x86_64";
-			};
-			name = Release;
-		};
-		41B440702201943300836E40 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				INFOPLIST_FILE = LoginReaderDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.LoginReaderDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginReaderDemo.app/LoginReaderDemo";
-			};
-			name = Debug;
-		};
-		41B440712201943300836E40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				INFOPLIST_FILE = LoginReaderDemoTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.LoginReaderDemoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginReaderDemo.app/LoginReaderDemo";
-			};
-			name = Release;
-		};
-		41B440732201943300836E40 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				INFOPLIST_FILE = LoginReaderDemoUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.LoginReaderDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LoginReaderDemo;
-			};
-			name = Debug;
-		};
-		41B440742201943300836E40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				INFOPLIST_FILE = LoginReaderDemoUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.LoginReaderDemoUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LoginReaderDemo;
-			};
-			name = Release;
-		};
 		41E40E2B20871BBF0062A880 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1385,165 +816,6 @@
 			};
 			name = Release;
 		};
-		41E40E2E20871BBF0062A880 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB99A429FA68120D65D051D4 /* Pods-SampleGigatmsSDK.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/CocoaAsyncSocket",
-				);
-				INFOPLIST_FILE = SampleGigatmsSDK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"Crashlytics\"",
-					"-framework",
-					"\"Fabric\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-all_load",
-					"-framework",
-					"\"UIKit\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.SampleDT205;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		41E40E2F20871BBF0062A880 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 296C9E2AF57113AA0695EF40 /* Pods-SampleGigatmsSDK.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/CocoaAsyncSocket",
-				);
-				INFOPLIST_FILE = SampleGigatmsSDK/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"Crashlytics\"",
-					"-framework",
-					"\"Fabric\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-all_load",
-					"-framework",
-					"\"UIKit\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.SampleDT205;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		41E40E3120871BBF0062A880 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				INFOPLIST_FILE = SampleGigatmsSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.SampleGigatmsSDKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleGigatmsSDK.app/SampleGigatmsSDK";
-			};
-			name = Debug;
-		};
-		41E40E3220871BBF0062A880 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				INFOPLIST_FILE = SampleGigatmsSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.SampleGigatmsSDKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleGigatmsSDK.app/SampleGigatmsSDK";
-			};
-			name = Release;
-		};
-		41E40E3420871BBF0062A880 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				INFOPLIST_FILE = SampleGigatmsSDKUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.SampleGigatmsSDKUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SampleGigatmsSDK;
-			};
-			name = Debug;
-		};
-		41E40E3520871BBF0062A880 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJGX2HQEE9;
-				INFOPLIST_FILE = SampleGigatmsSDKUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.SampleGigatmsSDKUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SampleGigatmsSDK;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1574,65 +846,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41B4406C2201943300836E40 /* Build configuration list for PBXNativeTarget "LoginReaderDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41B4406D2201943300836E40 /* Debug */,
-				41B4406E2201943300836E40 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41B4406F2201943300836E40 /* Build configuration list for PBXNativeTarget "LoginReaderDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41B440702201943300836E40 /* Debug */,
-				41B440712201943300836E40 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41B440722201943300836E40 /* Build configuration list for PBXNativeTarget "LoginReaderDemoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41B440732201943300836E40 /* Debug */,
-				41B440742201943300836E40 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		41E40DF920871BBE0062A880 /* Build configuration list for PBXProject "SampleGigatmsSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41E40E2B20871BBF0062A880 /* Debug */,
 				41E40E2C20871BBF0062A880 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41E40E2D20871BBF0062A880 /* Build configuration list for PBXNativeTarget "SampleGigatmsSDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41E40E2E20871BBF0062A880 /* Debug */,
-				41E40E2F20871BBF0062A880 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41E40E3020871BBF0062A880 /* Build configuration list for PBXNativeTarget "SampleGigatmsSDKTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41E40E3120871BBF0062A880 /* Debug */,
-				41E40E3220871BBF0062A880 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		41E40E3320871BBF0062A880 /* Build configuration list for PBXNativeTarget "SampleGigatmsSDKUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41E40E3420871BBF0062A880 /* Debug */,
-				41E40E3520871BBF0062A880 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

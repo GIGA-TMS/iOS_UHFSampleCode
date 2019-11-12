@@ -29,7 +29,7 @@
     if (passDev) {
         [passDev setListener:self];
         
-        [passDev cmdInitializeSettings:passDev.classVer];
+        
         
     }
     allTagItems = [[NSMutableArray alloc]init];
@@ -107,6 +107,8 @@
 
 
 -(void)delayAction {
+    NSLog(@"InventoryViewController delayAction cmdGetFirmwareVersion");
+    
       [passDev cmdGetFirmwareVersion];
 }
 

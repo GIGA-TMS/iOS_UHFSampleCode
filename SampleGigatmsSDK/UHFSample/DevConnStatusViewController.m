@@ -117,6 +117,7 @@
             [self.labDevConnStatus setBackgroundColor:UIColor.greenColor];
             [self.btnConnect setTitle:@"Disconnect" forState:UIControlStateNormal];
             if (!isConnected) {
+                NSLog(@"DevConnStatusViewController DevConnected cmdGetFirmwareVersion");
                 [passDev cmdGetFirmwareVersion];
             }
             isConnected = true;

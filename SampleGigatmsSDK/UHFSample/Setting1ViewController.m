@@ -60,7 +60,7 @@
     self.pickerCtrlBuzzer.delegate = self;
     [self.pickerCtrlBuzzer setTag:5];
     
-    
+    NSLog(@"Setting1ViewController cmdGetFirmwareVersion");
     [passDev cmdGetFirmwareVersion];
     
 }
@@ -76,6 +76,7 @@
     [passDev cmdSetRfPower:false RFPower:(Byte)[self.sliderRFPower value]];
 }
 - (IBAction)actReadSensitivity:(id)sender {
+    [passDev cmdGetRfPower:false];
     [passDev cmdGetSensitivity:true];
 }
 - (IBAction)actWriteSensitivity:(id)sender {
@@ -130,6 +131,7 @@
             break;
     }
     [passDev cmdSetSensitivity:true RfSensitivityLevel:setLevel];
+    
 }
 - (IBAction)actReadTriggerType:(id)sender {
     [passDev cmdGetTriggerType:true];

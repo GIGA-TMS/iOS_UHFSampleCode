@@ -1,6 +1,19 @@
 SDK History
 ===========
 
+2.0.0.12 (2019/11/12)
+---------------------
+
+### Update
+
+-	add readSetting FIFO
+
+```
+-(void)cmdSet:(BOOL)isTemp InventoryRoundInterval:(int)tenMilliSeconds;
+-(void)cmdGetInventoryRoundInterval:(BOOL)isTemp;
+```
+
+
 2.0.0.11 (2019/11/01)
 ---------------------
 
