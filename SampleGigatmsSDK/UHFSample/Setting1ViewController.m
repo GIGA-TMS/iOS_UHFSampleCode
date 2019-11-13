@@ -76,7 +76,6 @@
     [passDev cmdSetRfPower:false RFPower:(Byte)[self.sliderRFPower value]];
 }
 - (IBAction)actReadSensitivity:(id)sender {
-    [passDev cmdGetRfPower:false];
     [passDev cmdGetSensitivity:true];
 }
 - (IBAction)actWriteSensitivity:(id)sender {
