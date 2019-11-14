@@ -33,8 +33,8 @@ typedef NS_ENUM(Byte, MemoryBankSelection){
 
 typedef NS_ENUM(Byte, EventType){
     
-    ET_TagPresented             = 0xA0,
-    ET_TagPresentedWithRemoved  = 0x80,
+    ET_TagPresented             = 0xFE,
+    ET_TagPresentedWithRemoved  = 0xDE,
     ET_TagPresentedEx           = 0x00,
 };
 
