@@ -1,6 +1,21 @@
 SDK History
 ===========
 
+2.0.0.16 (2019/11/20)
+---------------------
+
+### Update
+
+- add UHFScannerDebugCallback
+- fixed Update EEPROM to Register function
+
+2.0.0.15 (2019/11/20)
+---------------------
+
+### Update
+
+- fixed lock timeout
+
 2.0.0.14 (2019/11/15)
 ---------------------
 
