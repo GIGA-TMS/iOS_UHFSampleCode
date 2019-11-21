@@ -28,6 +28,7 @@
 {
     
     UHFDevice* passDev;
+    int repeatTime;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,24 +63,26 @@
     
     NSLog(@"Setting1ViewController cmdGetFirmwareVersion");
     [passDev cmdGetFirmwareVersion];
-    
 }
 - (void)viewWillAppear:(BOOL)animated {
     [passDev setListener:self];
 }
-
+#pragma mark - test 4 3 RFPower slider
 - (IBAction)actReadRFPower:(id)sender {
     [passDev cmdGetRfPower:false];
 }
-
 - (IBAction)actWriteRFPower:(id)sender {
-    [passDev cmdSetRfPower:false RFPower:(Byte)[self.sliderRFPower value]];
+    int iRFPower = [self.sliderRFPower value];
+    [passDev cmdSetRfPower:false RFPower:(Byte)iRFPower];
 }
+#pragma mark - test 2 1 Sensitivity slider
 - (IBAction)actReadSensitivity:(id)sender {
-    [passDev cmdGetSensitivity:true];
+    [passDev cmdGetSensitivity:false];
 }
+
 - (IBAction)actWriteSensitivity:(id)sender {
     int level = [self.sliderSensitivity value];
+    NSLog(@"UI cmdSetSensitivity level = %d",level);
     RfSensitivityLevel setLevel;
     switch (level) {
         case 1:
@@ -129,11 +132,13 @@
             setLevel = LEVEL_14_HIGHEST;
             break;
     }
-    [passDev cmdSetSensitivity:true RfSensitivityLevel:setLevel];
+    NSLog(@"UI cmdSetSensitivity setLevel = %d",setLevel);
+    [passDev cmdSetSensitivity:false RfSensitivityLevel:setLevel];
     
 }
+#pragma mark - TriggerType
 - (IBAction)actReadTriggerType:(id)sender {
-    [passDev cmdGetTriggerType:true];
+    [passDev cmdGetTriggerType:false];
 }
 
 - (IBAction)actWriteTriggerType:(id)sender {
@@ -161,10 +166,10 @@
         }
             break;
     }
-    [passDev cmdSetTriggerType:true TriggerType:setTrigger];
+    [passDev cmdSetTriggerType:false TriggerType:setTrigger];
     
 }
-
+#pragma mark - ControlBuzzer
 - (IBAction)actCtrlBuzzer:(id)sender {
     int mode = (int)[self.pickerCtrlBuzzer selectedRowInComponent:0];
     BuzzerAction buzzerAct;
@@ -197,26 +202,27 @@
     [passDev cmdControlBuzzer:buzzerAct];
 }
 
-
+#pragma mark - Q slider
 - (IBAction)actReadQ:(id)sender {
-    [passDev cmdGetQValue:true];
+    [passDev cmdGetQValue:false];
 }
 
 - (IBAction)actWriteQ:(id)sender {
     
     int iQ = [self.sliderQ value];
     NSLog(@"iQ = %d",iQ);
-    [passDev cmdSetQValue:true QValue:(Byte)iQ];
+    [passDev cmdSetQValue:false QValue:(Byte)iQ];
 }
 
+#pragma mark - TargetAndSession
 - (IBAction)actReadTargetAndSession:(id)sender {
-    [passDev cmdGetSessionAndTarget:true];
+    [passDev cmdGetSessionAndTarget:false];
 }
 
 - (IBAction)actWriteTargetAndSession:(id)sender {
-    [passDev cmdSetSessionAndTarget:true Target:(Byte)[self.pickerTarget selectedRowInComponent:0] Session:(Byte)[self.pickerSession selectedRowInComponent:0]];
+    [passDev cmdSetSessionAndTarget:false Target:(Byte)[self.pickerTarget selectedRowInComponent:0] Session:(Byte)[self.pickerSession selectedRowInComponent:0]];
 }
-
+#pragma mark - test 6 5 BuzzerOperationMode
 - (IBAction)actReadBOM:(id)sender {
     [passDev cmdGetBuzzerOperationMode:false];
 }
@@ -247,21 +253,35 @@
 
 - (IBAction)sliderRFPower:(id)sender {
 }
+#pragma mark - TagPresentedEventThreshold
 - (IBAction)actReadTagPresentedEventThreshold:(id)sender {
     [passDev cmdGetTagPresentRepeatInterval:true];
-//    [passDev cmdGetTagPresentedEventThreshold:true];
+    //    [passDev cmdGetTagPresentedEventThreshold:true];
 }
 - (IBAction)actWriteTagPresentedEventThreshold:(id)sender {
     NSString *bTimeNum = self.txtTagPresentedEventThreshold.text;
     NSInteger iTimeNum = [bTimeNum integerValue];
     if (255 > iTimeNum && iTimeNum >= 0) {
-        [passDev cmdSetTagPresentRepeatInterval:true Time:(int)iTimeNum];
+        [passDev cmdSetTagPresentRepeatInterval:false Time:(int)iTimeNum];
     }else {
         [self showToast:@"Error" message:@"Error parameter"];
     }
     
 }
+#pragma mark - TagRemoveedEventThreshold
+- (IBAction)actReadTagRemoveedEventThreshold:(id)sender {
+    [passDev cmdGetTagRemoveThreshold:false];
+}
 
+- (IBAction)actSetTagRemovedEventThreshold:(id)sender {
+    NSString *bTimeNum = self.txtTagRemovedEventThreshold.text;
+    NSInteger iTimeNum = [bTimeNum integerValue];
+    if (255 > iTimeNum && iTimeNum >= 0) {
+        [passDev cmdSetTagRemoveThreshold:false Round:iTimeNum];
+    }else {
+        [self showToast:@"Error" message:@"Error parameter"];
+    }
+}
 
 
 - (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
@@ -283,7 +303,7 @@
             }
             break;
         case 3:
-                iCount = _pickDataSession.count;
+            iCount = _pickDataSession.count;
             break;
         case 4:
             iCount = _pickDataBOM.count;
@@ -355,7 +375,7 @@
             }
             break;
         case 3:
-                strValue = _pickDataSession[row];
+            strValue = _pickDataSession[row];
             
             break;
         case 4:
@@ -376,8 +396,22 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    if (pickerView.tag == 3) {
-        [self.pickerTarget reloadAllComponents];
+    
+    switch (pickerView.tag) {
+        case 2:
+        {
+        }
+            break;
+        case 3:
+        {
+            [self.pickerTarget reloadAllComponents];
+        }
+            break;
+        default:
+        {
+            
+        }
+            break;
     }
     
 }
@@ -401,20 +435,25 @@
 
 -(void)didGeneralSuccess:(NSString*)strCMDName{
     NSLog(@"UI didGeneralSuccess strCMDName = %@",strCMDName);
-    [self showToast:strCMDName message:@"Success"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self showToast:strCMDName message:@"Success"];
+    });
+    
 }
 -(void)didGeneralERROR:(NSString*)strCMDName ErrMessage:(NSString*)strErrorMessage{
-     [self showToast:@"ERROR" message:strErrorMessage];
+    [self showToast:@"ERROR" message:strErrorMessage];
 }
 - (void)didGetFirmwareVersion:(NSString *)fwVer {
     NSLog(@"UI didDeviceInformation fwVer = %@",fwVer);
 }
 
 -(void)didGetRfPower:(int)rfPower{
-    
+    NSLog(@"UI didGetRfPower rfPower = %d",rfPower);
+    [self showToast:@"didGetRfPower" message:@""];
     [self.sliderRFPower setValue:rfPower];
 }
 -(void)didGetSensitivity:(RfSensitivityLevel)rfSensitivity{
+    NSLog(@"UI didGetSensitivity rfSensitivity = %d",rfSensitivity);
     float level = 0;
     switch (rfSensitivity) {
         case LEVEL_14_HIGHEST:
@@ -492,9 +531,10 @@
             break;
     }
     [self.sliderSensitivity setValue:level];
+    [self showToast:@"didGetSensitivity" message:@""];
 }
 -(void)didGetTriggerType:(TriggerType)triggerType{
-
+    [self showToast:@"didGetTriggerType" message:@""];
     int pickRow = 0;
     BOOL isCommand = ((triggerType | 0x01) == 0x01)?true:false;
     switch (triggerType) {
@@ -536,25 +576,26 @@
 }
 
 -(void)didGetSessionAnd:(Session)session Target:(Target) target{
-    NSLog(@"didGetSessionAnd");
-    
+    [self showToast:@"didGetSessionAndTarget" message:@""];
     [self.pickerSession selectRow:session inComponent:0 animated:YES];
     [self.pickerTarget selectRow:target inComponent:0 animated:YES];
+    [self.pickerTarget reloadAllComponents];
 }
 -(void)didGetQValue:(Byte) qValue{
-    NSLog(@"didGetQValue");
+    [self showToast:@"didGetQValue" message:@""];
     [self.sliderQ setValue:qValue];
 }
 
 -(void)didGetBuzzerOperationMode:(BuzzerOperationMode) bom{
-    NSLog(@"didGetBuzzerOperationMode");
+    NSLog(@"UI didGetBuzzerOperationMode bom = %d",bom);
+    
     NSInteger iBOM;
     switch (bom) {
             
         case BOM_Off:
             iBOM = 0;
             break;
-         
+            
         case BOM_Once:
             iBOM = 1;
             break;
@@ -568,64 +609,32 @@
             break;
     }
     [self.pickerBuzzerOperMode selectRow:iBOM inComponent:0 animated:YES];
+    
+    [self showToast:@"didGetBuzzerOperationMode" message:@""];
 }
 
 - (void)didGetTagPresentRepeatInterval:(int)time {
+    [self showToast:@"didGetTagPresentRepeatInterval" message:@""];
     NSString* sTimeNum = [[NSString alloc] initWithFormat:@"%d", (int)(time)];
     self.txtTagPresentedEventThreshold.text = sTimeNum;
 }
 
 - (void)didGetTagRemoveThreshold:(int)missingInventoryThreshold {
+    [self showToast:@"didGetTagRemoveThreshold" message:@""];
     NSString* sTimeNum = [[NSString alloc] initWithFormat:@"%d", (int)(missingInventoryThreshold)];
     self.txtTagRemovedEventThreshold.text = sTimeNum;
 }
-//- (void)didGetTagRemovedEventThreshold:(MissingInventoryThreshold)missingInventoryThreshold {
-//    int pickRow = 0;
-//    switch (missingInventoryThreshold) {
-//        case HIGHEST:
-//        {
-//            pickRow = 0;
-//        }
-//            break;
-//        case MEDIUM:
-//        {
-//            pickRow = 1;
-//        }
-//            break;
-//        case LOWEST:
-//        {
-//            pickRow = 2;
-//        }
-//            break;
-//        default:
-//            pickRow = 0;
-//            break;
-//    }
-//    [self.pickerTagRemovedEventThreshold selectRow:pickRow inComponent:0 animated:YES];
-//
-//}
 
 
 -(void)showToast:(NSString*)title message:(NSString*)message {
-    //    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
-    //                                                                   message:message
-    //                                                            preferredStyle:UIAlertControllerStyleAlert];
-    //    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-    //                                                          handler:^(UIAlertAction * action) {
-    //
-    //    [alert addAction:defaultAction];
-    //    [self presentViewController:alert animated:YES completion:nil];
-    
-    
     NSMutableString* allMesg = [NSMutableString stringWithString:title];
     [allMesg appendString:@" "];
     [allMesg appendString:message];
-
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = allMesg;
     hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:3];
+    [hud hideAnimated:YES afterDelay:1];
 }
 
 
@@ -642,23 +651,15 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.txtTagPresentedEventThreshold resignFirstResponder];
-     [self.txtTagRemovedEventThreshold resignFirstResponder];
+    [self.txtTagRemovedEventThreshold resignFirstResponder];
     return true;
 }
 
-- (IBAction)actReadTagRemoveedEventThreshold:(id)sender {
-     [passDev cmdGetTagRemoveThreshold:true];
-}
 
-- (IBAction)actSetTagRemovedEventThreshold:(id)sender {
-    
-    NSString *bTimeNum = self.txtTagRemovedEventThreshold.text;
-       NSInteger iTimeNum = [bTimeNum integerValue];
-       if (255 > iTimeNum && iTimeNum >= 0) {
-           [passDev cmdSetTagRemoveThreshold:true Round:iTimeNum];
-       }else {
-           [self showToast:@"Error" message:@"Error parameter"];
-       }
-}
+
+
+
+
+
 
 @end

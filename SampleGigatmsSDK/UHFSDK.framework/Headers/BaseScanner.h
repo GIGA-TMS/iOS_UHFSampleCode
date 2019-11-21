@@ -30,7 +30,7 @@
 -(void)startScanDevice;
 -(void)setScanTime:(double)time;
 -(void)stopScan;
--(void)didBaseDiscoverBLEDevice:(GTBLEDevInfo *)dev;
+-(void)didBaseDiscoverBLEDevice:(GTBLEDevInfo *)dev data:(NSData* )data;
 -(void)didBaseScanStop;
 
 @end

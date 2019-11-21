@@ -13,6 +13,7 @@
 #import <UHFSDK/UHFScanner.h>
 #import <UHFSDK/UHFDevice.h>
 #import <UHFSDK/GTDeviceManager.h>
+#import "ScanDebugLogTableViewController.h"
 
 //#import <Crashlytics/Crashlytics.h>
 
@@ -20,13 +21,16 @@
 
 @interface ScanDevV2ViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,
 UITableViewDelegate, UITableViewDataSource,
-UHFScannerCallback,DevConnectionCallback>
+UHFScannerCallback,DevConnectionCallback,
+UHFScannerDebugCallback>
 {
     NSArray *_pickDataDevClass;
     NSArray *_pickDataDevConChannl;
     NSMutableArray* g_BaseDevs;
     NSMutableDictionary* allBaseDevList;
     UHFScanner* uhfScanner;
+    
+    ScanDebugLogTableViewController* childViewController;
 }
 @end
 
@@ -43,16 +47,17 @@ UHFScannerCallback,DevConnectionCallback>
     self.pickerDevClass.delegate = self;
     [self.pickerDevClass setTag:1];
     
-   
-     [self.pickerDevClass selectRow:1 inComponent:0 animated:true];
+    
+    [self.pickerDevClass selectRow:1 inComponent:0 animated:true];
     self.pickerDevConChannl.dataSource = self;
     self.pickerDevConChannl.delegate = self;
     [self.pickerDevConChannl setTag:2];
-    
+    [self.pickerDevConChannl selectRow:1 inComponent:0 animated:true];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     uhfScanner = [[UHFScanner alloc]init:self ClassVer:UHF_TS100];
+    [uhfScanner setMUHFScannerDebugCallback:self];
     allBaseDevList = [[NSMutableDictionary alloc]init];
     
     if (g_BaseDevs == nil) {
@@ -63,7 +68,7 @@ UHFScannerCallback,DevConnectionCallback>
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-     [self refresh];
+    [self refresh];
 }
 
 - (void)showAPPSDKVersion {
@@ -224,12 +229,12 @@ UHFScannerCallback,DevConnectionCallback>
         switch (temp.getDevInfo.currentConnStatus) {
             case DevDisconnected:
             {
-                 [cell.btnConnect setTitle:@"Connect" forState:UIControlStateNormal];
+                [cell.btnConnect setTitle:@"Connect" forState:UIControlStateNormal];
             }
                 break;
             case DevConnected:
             {
-                 [cell.btnConnect setTitle:@"Disconnect" forState:UIControlStateNormal];
+                [cell.btnConnect setTitle:@"Disconnect" forState:UIControlStateNormal];
             }
                 break;
             default:
@@ -249,6 +254,7 @@ UHFScannerCallback,DevConnectionCallback>
     return cell;
 }
 
+#pragma mark - Button Action
 -(void)actCtrl:(id)sender{
     if (g_BaseDevs) {
         BaseDevice* temp = [g_BaseDevs objectAtIndex:[sender tag]];
@@ -296,7 +302,6 @@ UHFScannerCallback,DevConnectionCallback>
     
 }
 -(void)didDiscoverDevice:(BaseDevice*)dev{
-    NSLog(@"UI didDiscoverDevice dev = %@",dev.debugDescription);
     GTBaseDevInfo* devInfo = dev.getDevInfo;
     BaseDevice* addDev = [[GTDeviceManager sharedDeviceManager]addDevice:devInfo];
     if(addDev) {
@@ -317,10 +322,43 @@ UHFScannerCallback,DevConnectionCallback>
 }
 
 -(void)refresh{
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
+    //    self.tableView.delegate = self;
+    //    self.tableView.dataSource = self;
     [self.tableView reloadData];
     self.tableView.contentInset = UIEdgeInsetsMake(0, -10, 0, 10);
+}
+
+- (void)didDebugReadRawData:(NSData *)data channel:(NSString *)channelID {
+    if (childViewController) {
+        int nBuffLength = (int) [data length];
+        const char* pBuff =  (const char*) [data bytes];
+        
+        NSString* strDbgString = @"didDebugReadRawData";
+//        strDbgString = [NSString stringWithFormat:@"Byte[%d]:", nBuffLength];
+        strDbgString = [NSString stringWithFormat:@"%@ %@", strDbgString, @"\n" ];
+        for( int a=0 ; a<nBuffLength ; a++ ) {
+            strDbgString = [NSString stringWithFormat:@"%@ 0X%02X", strDbgString, (pBuff[a]&0x0FF) ];
+            if (a % 10 == 0 && a > 0) {
+                strDbgString = [NSString stringWithFormat:@"%@ %@", strDbgString, @"\n" ];
+            }
+        }
+        [childViewController updateLog:strDbgString];
+    }
+}
+
+- (void)didDebugWriteRawData:(NSData *)data channel:(NSString *)channelID {
+    
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString * segueName = segue.identifier;
+    if ([segueName isEqualToString: @"ScanDebugLodView"]) {
+        
+        ScanDebugLogTableViewController* ctrler = (ScanDebugLogTableViewController*)self.tabBarController;
+        
+        childViewController = (ScanDebugLogTableViewController *) [segue destinationViewController];
+    }
 }
 
 @end

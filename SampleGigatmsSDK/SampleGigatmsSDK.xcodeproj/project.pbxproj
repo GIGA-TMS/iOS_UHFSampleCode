@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		412AEFC4225DDABF001C220D /* DevDetailTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412AEFC3225DDABF001C220D /* DevDetailTabBarViewController.m */; };
 		4155504D22533321009CD9FD /* BaseDevItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4155504C22533321009CD9FD /* BaseDevItemTableViewCell.m */; };
-		41555050225337C9009CD9FD /* ScanBaseDevTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4155504F225337C9009CD9FD /* ScanBaseDevTableViewController.m */; };
 		4155505222536EEA009CD9FD /* UHFSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4128258F2137B8FF00F3C137 /* UHFSDK.framework */; };
 		4155505322536EEA009CD9FD /* UHFSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4128258F2137B8FF00F3C137 /* UHFSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4155505422536EEA009CD9FD /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */; };
 		4155505522536EEA009CD9FD /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4162742B2314D46400DDFBAE /* ScanDevV2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4162742A2314D46400DDFBAE /* ScanDevV2ViewController.m */; };
-		4162742F23164D9500DDFBAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4162742D23164D9400DDFBAE /* GoogleService-Info.plist */; };
 		4168F3C62260312C00E059ED /* InventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3C52260312C00E059ED /* InventoryViewController.m */; };
 		4168F3C92260314C00E059ED /* ReadWriteTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3C82260314C00E059ED /* ReadWriteTagViewController.m */; };
 		4168F3CC2260316600E059ED /* Setting1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3CB2260316600E059ED /* Setting1ViewController.m */; };
 		4168F3CF2260317300E059ED /* Setting2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3CE2260317300E059ED /* Setting2ViewController.m */; };
 		4168F3D22264796F00E059ED /* TagItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3D12264796F00E059ED /* TagItemTableViewCell.m */; };
 		4168F3D522684D6F00E059ED /* DevConnStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4168F3D422684D6F00E059ED /* DevConnStatusViewController.m */; };
+		4179C92723852B57009D9CE9 /* ScanDebugLogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4179C92623852B57009D9CE9 /* ScanDebugLogTableViewController.m */; };
+		4179C92A23852C29009D9CE9 /* ScanDebugLogItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4179C92923852C29009D9CE9 /* ScanDebugLogItemTableViewCell.m */; };
 		41A5CC122252096D00FF5953 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC112252096D00FF5953 /* AppDelegate.m */; };
 		41A5CC1B2252096D00FF5953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41A5CC192252096D00FF5953 /* Main.storyboard */; };
 		41A5CC1D2252096F00FF5953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A5CC1C2252096F00FF5953 /* Assets.xcassets */; };
@@ -29,8 +29,6 @@
 		41A5CC232252096F00FF5953 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC222252096F00FF5953 /* main.m */; };
 		41A5CC2D2252097000FF5953 /* UHFSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC2C2252097000FF5953 /* UHFSampleTests.m */; };
 		41A5CC382252097000FF5953 /* UHFSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC372252097000FF5953 /* UHFSampleUITests.m */; };
-		41ADAA9E237158EF00D6314C /* TwoParameterAPIViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ADAA9B237158EF00D6314C /* TwoParameterAPIViewCell.m */; };
-		41ADAAA0237158EF00D6314C /* TwoParameterAPIViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ADAA9C237158EF00D6314C /* TwoParameterAPIViewCell.xib */; };
 		41BDD4762371747400171592 /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BDD4752371747400171592 /* testViewController.m */; };
 		B426DDF9D18533366938BF78 /* libPods-UHFSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085813F69E08950A35125222 /* libPods-UHFSample.a */; };
 /* End PBXBuildFile section */
@@ -80,11 +78,8 @@
 		412AEFC3225DDABF001C220D /* DevDetailTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevDetailTabBarViewController.m; sourceTree = "<group>"; };
 		4155504B22533321009CD9FD /* BaseDevItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BaseDevItemTableViewCell.h; path = UITools/BaseDevItemTableViewCell.h; sourceTree = "<group>"; };
 		4155504C22533321009CD9FD /* BaseDevItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BaseDevItemTableViewCell.m; path = UITools/BaseDevItemTableViewCell.m; sourceTree = "<group>"; };
-		4155504E225337C9009CD9FD /* ScanBaseDevTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ScanBaseDevTableViewController.h; path = UITools/ScanBaseDevTableViewController.h; sourceTree = "<group>"; };
-		4155504F225337C9009CD9FD /* ScanBaseDevTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ScanBaseDevTableViewController.m; path = UITools/ScanBaseDevTableViewController.m; sourceTree = "<group>"; };
 		416274292314D46400DDFBAE /* ScanDevV2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ScanDevV2ViewController.h; path = UITools/ScanDevV2ViewController.h; sourceTree = "<group>"; };
 		4162742A2314D46400DDFBAE /* ScanDevV2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ScanDevV2ViewController.m; path = UITools/ScanDevV2ViewController.m; sourceTree = "<group>"; };
-		4162742D23164D9400DDFBAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4168F3C42260312C00E059ED /* InventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InventoryViewController.h; sourceTree = "<group>"; };
 		4168F3C52260312C00E059ED /* InventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InventoryViewController.m; sourceTree = "<group>"; };
 		4168F3C72260314C00E059ED /* ReadWriteTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadWriteTagViewController.h; sourceTree = "<group>"; };
@@ -97,6 +92,10 @@
 		4168F3D12264796F00E059ED /* TagItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItemTableViewCell.m; sourceTree = "<group>"; };
 		4168F3D322684D6F00E059ED /* DevConnStatusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DevConnStatusViewController.h; sourceTree = "<group>"; };
 		4168F3D422684D6F00E059ED /* DevConnStatusViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DevConnStatusViewController.m; sourceTree = "<group>"; };
+		4179C92523852B57009D9CE9 /* ScanDebugLogTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanDebugLogTableViewController.h; sourceTree = "<group>"; };
+		4179C92623852B57009D9CE9 /* ScanDebugLogTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanDebugLogTableViewController.m; sourceTree = "<group>"; };
+		4179C92823852C29009D9CE9 /* ScanDebugLogItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanDebugLogItemTableViewCell.h; sourceTree = "<group>"; };
+		4179C92923852C29009D9CE9 /* ScanDebugLogItemTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanDebugLogItemTableViewCell.m; sourceTree = "<group>"; };
 		4183DBEE2283F8BA00E8A0E0 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		418C68BE21912DE700EBC217 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		418C68BF21912DEE00EBC217 /* CocoaAsyncSocket.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = CocoaAsyncSocket.framework.dSYM; sourceTree = "<group>"; };
@@ -114,9 +113,6 @@
 		41A5CC332252097000FF5953 /* UHFSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UHFSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A5CC372252097000FF5953 /* UHFSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHFSampleUITests.m; sourceTree = "<group>"; };
 		41A5CC392252097000FF5953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41ADAA9A237158EF00D6314C /* TwoParameterAPIViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoParameterAPIViewCell.h; sourceTree = "<group>"; };
-		41ADAA9B237158EF00D6314C /* TwoParameterAPIViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoParameterAPIViewCell.m; sourceTree = "<group>"; };
-		41ADAA9C237158EF00D6314C /* TwoParameterAPIViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoParameterAPIViewCell.xib; sourceTree = "<group>"; };
 		41BDD4742371747400171592 /* testViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
 		41BDD4752371747400171592 /* testViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		41BDD4772372791300171592 /* UHFSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UHFSample-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -178,8 +174,6 @@
 			children = (
 				4155504B22533321009CD9FD /* BaseDevItemTableViewCell.h */,
 				4155504C22533321009CD9FD /* BaseDevItemTableViewCell.m */,
-				4155504E225337C9009CD9FD /* ScanBaseDevTableViewController.h */,
-				4155504F225337C9009CD9FD /* ScanBaseDevTableViewController.m */,
 				416274292314D46400DDFBAE /* ScanDevV2ViewController.h */,
 				4162742A2314D46400DDFBAE /* ScanDevV2ViewController.m */,
 			);
@@ -190,6 +184,10 @@
 			isa = PBXGroup;
 			children = (
 				4115A3CD236FFD6600276CDB /* UHFSample.entitlements */,
+				4179C92823852C29009D9CE9 /* ScanDebugLogItemTableViewCell.h */,
+				4179C92923852C29009D9CE9 /* ScanDebugLogItemTableViewCell.m */,
+				4179C92523852B57009D9CE9 /* ScanDebugLogTableViewController.h */,
+				4179C92623852B57009D9CE9 /* ScanDebugLogTableViewController.m */,
 				412AEFC2225DDABF001C220D /* DevDetailTabBarViewController.h */,
 				412AEFC3225DDABF001C220D /* DevDetailTabBarViewController.m */,
 				4155504A225332DE009CD9FD /* UITools */,
@@ -198,9 +196,6 @@
 				41A5CC192252096D00FF5953 /* Main.storyboard */,
 				41BDD4742371747400171592 /* testViewController.h */,
 				41BDD4752371747400171592 /* testViewController.m */,
-				41ADAA9A237158EF00D6314C /* TwoParameterAPIViewCell.h */,
-				41ADAA9B237158EF00D6314C /* TwoParameterAPIViewCell.m */,
-				41ADAA9C237158EF00D6314C /* TwoParameterAPIViewCell.xib */,
 				41A5CC1C2252096F00FF5953 /* Assets.xcassets */,
 				41A5CC1E2252096F00FF5953 /* LaunchScreen.storyboard */,
 				41A5CC212252096F00FF5953 /* Info.plist */,
@@ -243,7 +238,6 @@
 		41E40DF520871BBE0062A880 = {
 			isa = PBXGroup;
 			children = (
-				4162742D23164D9400DDFBAE /* GoogleService-Info.plist */,
 				41A5CC0F2252096D00FF5953 /* UHFSample */,
 				41A5CC2B2252097000FF5953 /* UHFSampleTests */,
 				41A5CC362252097000FF5953 /* UHFSampleUITests */,
@@ -312,7 +306,6 @@
 				41A5CC0B2252096D00FF5953 /* Frameworks */,
 				41A5CC0C2252096D00FF5953 /* Resources */,
 				4155505622536EEA009CD9FD /* Embed Frameworks */,
-				4162742C2316499400DDFBAE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -413,9 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41A5CC202252096F00FF5953 /* LaunchScreen.storyboard in Resources */,
-				4162742F23164D9500DDFBAE /* GoogleService-Info.plist in Resources */,
 				41A5CC1D2252096F00FF5953 /* Assets.xcassets in Resources */,
-				41ADAAA0237158EF00D6314C /* TwoParameterAPIViewCell.xib in Resources */,
 				41A5CC1B2252096D00FF5953 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,23 +428,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4162742C2316499400DDFBAE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#./Fabric.framework/run 74dbd095576795293334fd2ed0dfe4bb6c3fc085 44fb216eb2688b18153ed8208d7ac4261bb2de681caf2c96cf8d3ceba2351b36\n";
-		};
 		A47776255611B401A9627E6F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,15 +462,15 @@
 				4168F3CC2260316600E059ED /* Setting1ViewController.m in Sources */,
 				4168F3C62260312C00E059ED /* InventoryViewController.m in Sources */,
 				41A5CC122252096D00FF5953 /* AppDelegate.m in Sources */,
+				4179C92A23852C29009D9CE9 /* ScanDebugLogItemTableViewCell.m in Sources */,
 				41A5CC232252096F00FF5953 /* main.m in Sources */,
 				412AEFC4225DDABF001C220D /* DevDetailTabBarViewController.m in Sources */,
-				41555050225337C9009CD9FD /* ScanBaseDevTableViewController.m in Sources */,
 				4168F3C92260314C00E059ED /* ReadWriteTagViewController.m in Sources */,
 				4155504D22533321009CD9FD /* BaseDevItemTableViewCell.m in Sources */,
 				4168F3D522684D6F00E059ED /* DevConnStatusViewController.m in Sources */,
 				4162742B2314D46400DDFBAE /* ScanDevV2ViewController.m in Sources */,
+				4179C92723852B57009D9CE9 /* ScanDebugLogTableViewController.m in Sources */,
 				41BDD4762371747400171592 /* testViewController.m in Sources */,
-				41ADAA9E237158EF00D6314C /* TwoParameterAPIViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,8 +532,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = UHFSample/UHFSample.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SJGX2HQEE9;
@@ -595,8 +570,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = UHFSample/UHFSample.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 19;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = SJGX2HQEE9;
 				ENABLE_BITCODE = NO;
@@ -615,6 +592,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gigatms.UHFSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "UHFSample/UHFSample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

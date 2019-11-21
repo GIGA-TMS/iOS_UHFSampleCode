@@ -1,6 +1,14 @@
 SDK History
 ===========
 
+2.0.0.21 (2019/11/21)
+---------------------
+
+### Update
+
+- change new "Update EEPROM to Register" function
+- fixed multiple ACK function
+
 2.0.0.16 (2019/11/20)
 ---------------------
 

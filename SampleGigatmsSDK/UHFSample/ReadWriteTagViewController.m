@@ -105,19 +105,13 @@
 }
 
 -(void)showToast:(NSString*)title message:(NSString*)message {
-    //    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
-    //                                                                   message:message
-    //                                                            preferredStyle:UIAlertControllerStyleAlert];
-    //    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-    //                                                          handler:^(UIAlertAction * action) {
-    //
-    //    [alert addAction:defaultAction];
-    //    [self presentViewController:alert animated:YES completion:nil];
-    
     
     NSMutableString* allMesg = [NSMutableString stringWithString:title];
     [allMesg appendString:@" "];
-    [allMesg appendString:message];
+    if (message) {
+        [allMesg appendString:message];
+    }
+    
     
     NSLog(@"allMesg = %@",allMesg);
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
@@ -127,4 +121,8 @@
     [hud hideAnimated:YES afterDelay:3];
 }
 
+
+- (void)didDiscoverTagInfoEx:(GNPDecodedTagData *)decodedTagData {
+    
+}
 @end
