@@ -29,7 +29,6 @@
 		41A5CC232252096F00FF5953 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC222252096F00FF5953 /* main.m */; };
 		41A5CC2D2252097000FF5953 /* UHFSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC2C2252097000FF5953 /* UHFSampleTests.m */; };
 		41A5CC382252097000FF5953 /* UHFSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A5CC372252097000FF5953 /* UHFSampleUITests.m */; };
-		41BDD4762371747400171592 /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BDD4752371747400171592 /* testViewController.m */; };
 		B426DDF9D18533366938BF78 /* libPods-UHFSample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 085813F69E08950A35125222 /* libPods-UHFSample.a */; };
 /* End PBXBuildFile section */
 
@@ -113,8 +112,6 @@
 		41A5CC332252097000FF5953 /* UHFSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UHFSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A5CC372252097000FF5953 /* UHFSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UHFSampleUITests.m; sourceTree = "<group>"; };
 		41A5CC392252097000FF5953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		41BDD4742371747400171592 /* testViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
-		41BDD4752371747400171592 /* testViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		41BDD4772372791300171592 /* UHFSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UHFSample-Bridging-Header.h"; sourceTree = "<group>"; };
 		41CC5F362201A2FA00569512 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		423514CE85D2BFA9A5C7AD9B /* Pods-LoginReaderDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginReaderDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginReaderDemo/Pods-LoginReaderDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,8 +191,6 @@
 				41A5CC102252096D00FF5953 /* AppDelegate.h */,
 				41A5CC112252096D00FF5953 /* AppDelegate.m */,
 				41A5CC192252096D00FF5953 /* Main.storyboard */,
-				41BDD4742371747400171592 /* testViewController.h */,
-				41BDD4752371747400171592 /* testViewController.m */,
 				41A5CC1C2252096F00FF5953 /* Assets.xcassets */,
 				41A5CC1E2252096F00FF5953 /* LaunchScreen.storyboard */,
 				41A5CC212252096F00FF5953 /* Info.plist */,
@@ -470,7 +465,6 @@
 				4168F3D522684D6F00E059ED /* DevConnStatusViewController.m in Sources */,
 				4162742B2314D46400DDFBAE /* ScanDevV2ViewController.m in Sources */,
 				4179C92723852B57009D9CE9 /* ScanDebugLogTableViewController.m in Sources */,
-				41BDD4762371747400171592 /* testViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
