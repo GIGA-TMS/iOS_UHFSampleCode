@@ -252,7 +252,9 @@
 
 
 - (IBAction)sliderRFPower:(id)sender {
+    
 }
+
 #pragma mark - TagPresentedEventThreshold
 - (IBAction)actReadTagPresentedEventThreshold:(id)sender {
     [passDev cmdGetTagPresentRepeatInterval:true];
@@ -582,6 +584,7 @@
     [self.pickerTarget reloadAllComponents];
 }
 -(void)didGetQValue:(Byte) qValue{
+    NSLog(@"UI didGetQValue iqValue = %d",qValue);
     [self showToast:@"didGetQValue" message:@""];
     [self.sliderQ setValue:qValue];
 }

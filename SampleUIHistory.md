@@ -1,6 +1,14 @@
 Sample UI History
 ===========
 
+2.0.0.20 (2019/11/22)
+---------------------
+
+### Update
+
+- remove InventoryEx UI
+
+
 2.0.0.19 (2019/11/21)
 ---------------------
 
@@ -9,7 +17,6 @@ Sample UI History
 - add ScanDebug Callback
 - fixed UI error
 - remove test code
-
 
 
 2.0.0.17 (2019/11/20)

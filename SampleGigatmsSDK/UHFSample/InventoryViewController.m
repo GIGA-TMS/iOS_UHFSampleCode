@@ -44,6 +44,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
 //    [passDev setListener:nil];
 }
+#pragma mark - Action
 - (IBAction)actInitalizeSettings:(id)sender {
     [passDev cmdInitializeSettings:passDev.classVer];
 }
@@ -108,8 +109,7 @@
 
 -(void)delayAction {
     NSLog(@"InventoryViewController delayAction cmdGetFirmwareVersion");
-    
-      [passDev cmdGetFirmwareVersion];
+    [passDev cmdGetFirmwareVersion];
 }
 
 
