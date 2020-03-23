@@ -22,15 +22,15 @@ NS_ASSUME_NONNULL_BEGIN
  - ET_PC_EPC_TID_Data: The ouput data is PC + EPC fields + TID bank data and Memory Bank.
  */
 typedef NS_ENUM(Byte, TagPresentedType){
-//    ET_PC_EPC             = 0xFF,
-//    ET_PC_EPC_TID         = 0xFE,
-//    ET_PC_EPC_Data        = 0xFD,
-//    ET_PC_EPC_TID_Data    = 0xFC,
-//    EVENT_62              = 0x00,
+    //    ET_PC_EPC             = 0xFF,
+    //    ET_PC_EPC_TID         = 0xFE,
+    //    ET_PC_EPC_Data        = 0xFD,
+    //    ET_PC_EPC_TID_Data    = 0xFC,
+    //    EVENT_62              = 0x00,
     //    ET_RF80TagEvent         = 0x80 bit:7 is 1
-        ET_PC_EPC             = 0xDF,
-        ET_PC_EPC_TID         = 0xDE,
-
+    ET_PC_EPC             = 0xDF,
+    ET_PC_EPC_TID         = 0xDE,
+    
 };
 
 typedef NS_ENUM(Byte, ScanMode){
@@ -100,6 +100,16 @@ typedef NS_ENUM(Byte, BuzzerAction){
 #pragma mark - Special Command List
 
 
+/// send  Special Multi CMD
+/// @param datas  Special CMD format
+/// @param apiCode software api code
+/// @param cmdCount cmd conunt
+-(void)cmdMarkMultiCMD:(NSMutableArray*) datas CMDCode:(Byte)apiCode CMDCount:(int)cmdCount;
+
+/// send  Special CMD
+/// @param cmdData Special CMD format
+-(void)sendGNetCMD:(NSData*)cmdData;
+
 /**
  Initialize Settings
  Initializes the device settings.
@@ -107,9 +117,9 @@ typedef NS_ENUM(Byte, BuzzerAction){
 -(void)cmdInitializeSettings:(ClassVer) classVer;
 
 
-
--(void)cmdSetSpecialSetting:(BOOL)isTemp Address:(char)iAddr Value:(NSData*)val;
--(void)cmdGetSpecialSetting:(BOOL)isTemp Address:(char)iAddr ReadLen:(char)readLen;
+-(void)cmdSpecial:(NSData*)cmdData CMDCode:(int)apiCode CMDCount:(int)cmdCount;
+-(void)cmdSetSpecialSetting:(BOOL)isTemp Address:(char)iAddr Value:(NSData*)val CMDCode:(int)apiCode;
+-(void)cmdGetSpecialSetting:(BOOL)isTemp Address:(char)iAddr ReadLen:(char)readLen CMDCode:(int)apiCode;
 /**
  Only for TS100
  Control reader to make a specified sound beep.
@@ -118,22 +128,7 @@ typedef NS_ENUM(Byte, BuzzerAction){
  */
 -(void)cmdControlBuzzer:(BuzzerAction)buzzerAct;
 
-/**
- Only for TS100
- Gets the repeats mode of sounding the beep with the same pattern.
- 
- @param isTemp  If the value is true, this setting will write into EEPROM.
- */
--(void)cmdGetBuzzerOperationMode:(BOOL) isTemp;
 
-/**
- Only for TS100
- SetBuzzerOperationMode
- Sets the repeats mode of sounding the beep with the same pattern.
- @param isTemp  If the value is true, this setting will write into EEPROM.
- @param bom Buzzer Operation Mode:Specifies the repeats mode of sounding the beep with the same pattern.
- */
--(void)cmdSetBuzzerOperationMode:(BOOL) isTemp BuzzerOperationMode:(BuzzerOperationMode) bom;
 
 
 /**
@@ -189,44 +184,7 @@ typedef NS_ENUM(Byte, BuzzerAction){
 -(void)didGetSpecialSetting:(int)settingAddr Value:(int)settingValue;
 -(void)didGetSpecialSetting:(int)settingAddr Values:(NSData *)settingValues;
 
-
-#pragma mark - Command List
-/**
- Get Device BLE module
- Gets the firmware program version running on the device BLE module.
- */
--(void)cmdGetBLEFirmwareVersion;
-/**
- Get Device Information
- Gets the firmware program version running on the device.
- */
--(void)cmdGetFirmwareVersion;
-
-/**
- Start Inventory mEPC Tag.
- Starts the process of tag inventory using specified trigger source.
- @see IUHFDeviceListener
- @see  didEventTagPresented:
- @seealso GNPTagInfo
- 
- @param tagPresentedType Specify the way of triggering the RF power to read tag data.
- */
--(void)cmdStartInventory:(TagPresentedType) tagPresentedType;
-
-/**
- * Start inventory tags with specific encoded data type.
-
- @param tagDataEncodeType ex:tagDataEncodeType = UDC | EAN_UPC_EAS;
- */
--(void)cmdStartInventoryEx:(TagDataEncodeType) tagDataEncodeType;
-/**
- Stop Inventory mEPC Tag.
- Stops the process of tag inventory.
- @see  didGeneralSuccess:
- */
--(void)cmdStopInventory;
-
-
+#pragma mark - Setting Command List
 
 /**
  Get Q Value
@@ -315,66 +273,17 @@ typedef NS_ENUM(Byte, BuzzerAction){
  */
 -(void)cmdSetFrequencyList:(BOOL) isTemp List:(NSArray*) frequencyList;
 
-
-
-
-/**
- Write EPC
- 
- @param password The password of the tag.
- @param epc The epc data that is going to write into tag.
- */
--(void)cmdWriteEPC:(NSString*)password EPCData:(NSData*)epc;
-
-
-/**
- Write EPC
-
- @param password Specifies the password to write data.
- @param writeBank Specifies which memory bank to write.
- @param startWordAddress Specifies the start word address of memory bank to write data.When write EPC bank, notice that EPC starts from address 02, the first two 2 words are for CRC and PC.
- @param data Specifies the data to write to memory bank.
- */
--(void)cmdWriteTag:(NSString*)password MemoryBank:(MemoryBank)writeBank StartAddr:(int)startWordAddress Data:(NSData*)data;
-
-/**
- Write EPC
-
- @param epc Specifies the tag PC EPC to be selected.
- @param password Specifies the password to write data.
- @param writeBank Specifies which memory bank to write.
- @param startWordAddress Specifies the start word address of memory bank to write data.When write EPC bank, notice that EPC starts from address 02, the first two 2 words are for CRC and PC.
- @param data Specifies the data to write to memory bank.
- */
--(void)cmdWriteSelectTag:(NSString*)epc PWD:(NSString*)password MemoryBank:(MemoryBank)writeBank StartAddr:(int)startWordAddress Data:(NSData*)data;
-/**
- Read EPC
- Reads tag data from given memory bank.
- 
- @param password Password of the tag that is going to read. (4 byte/2 Hex String)
- */
--(void)cmdReadEPC:(NSString*)password;
-
-
-/// Read Tag
-/// @param isAnyTag Any Tag
-/// @param pwd Specifies the password to read data.
-/// @param bmCode Specifies which memory bank to read.
-/// @param offset Specifies the start word address of memory bank to read data.When read EPC bank, notice that EPC starts from address 02, the first two 2 words are for CRC and PC.
-/// @param readLen Specifies the length to read from memory bank.
--(void)cmdReadTag:(BOOL)isAnyTag PWD:(NSData*)pwd MemBankCode:(char)bmCode OffSet:(NSData*)offset ReadLen:(NSData*)readLen;
-
 /**
  Set the threshold to raise a TagPresentedEvent(UHFCallback.didDiscoveredTag).
-
+ 
  @param isTemp True value specifies the changes are temporary overwrides for settings. The changes are not saved into the EEPROM and take immediate effect (no rebooting required). False value specifies the changes are permanently overwrides for settings And also saved into the EEPROM. The changes will keep after rebooting the device.
- @param time The period to raising a TagPresentedEvent. range: 1~255 (Unit: 100ms), 0:Always repeating raising event, 255: Never repeating raising event. 
+ @param time The period to raising a TagPresentedEvent. range: 1~255 (Unit: 100ms), 0:Always repeating raising event, 255: Never repeating raising event.
  */
 -(void)cmdSetTagPresentRepeatInterval:(BOOL)isTemp Time:(int)time;
 
 /**
  Get the threshold to raise a TagRemovedEvent(UHFCallback.didDiscoveredTag).
-
+ 
  @param isTemp True value specifies the changes are temporary overwrides for settings. The changes are not saved into the EEPROM and take immediate effect (no rebooting required). False value specifies the changes are permanently overwrides for settings And also saved into the EEPROM. The changes will keep after rebooting the device.
  */
 -(void)cmdGetTagPresentRepeatInterval:(BOOL)isTemp;
@@ -382,7 +291,7 @@ typedef NS_ENUM(Byte, BuzzerAction){
 
 /**
  Set the threshold to raise a TagRemovedEvent(UHFCallback.didTagRemoved).
-
+ 
  @param isTemp True value specifies the changes are temporary overwrides for settings. The changes are not saved into the EEPROM and take immediate effect (no rebooting required). False value specifies the changes are permanently overwrides for settings And also saved into the EEPROM. The changes will keep after rebooting the device.
  @param round The count of missing discovering tag threshold of inventory rounds.
  */
@@ -390,7 +299,7 @@ typedef NS_ENUM(Byte, BuzzerAction){
 
 /**
  Get the threshold to raise a TagRemovedEvent(UHFCallback.didTagRemoved).
-
+ 
  @param isTemp True value specifies the changes are temporary overwrides for settings. The changes are not saved into the EEPROM and take immediate effect (no rebooting required). False value specifies the changes are permanently overwrides for settings And also saved into the EEPROM. The changes will keep after rebooting the device.
  */
 -(void)cmdGetTagRemoveThreshold:(BOOL)isTemp;
@@ -407,6 +316,96 @@ typedef NS_ENUM(Byte, BuzzerAction){
 -(void)cmdGetInventoryRoundInterval:(BOOL)isTemp;
 
 
+#pragma mark - Command List
+
+/**
+ Get Device Information
+ Gets the firmware program version running on the device.
+ */
+-(void)cmdGetFirmwareVersion;
+
+/**
+ Start Inventory mEPC Tag.
+ Starts the process of tag inventory using specified trigger source.
+ @see IUHFDeviceListener
+ @see  didEventTagPresented:
+ @seealso GNPTagInfo
+ 
+ @param tagPresentedType Specify the way of triggering the RF power to read tag data.
+ */
+-(void)cmdStartInventory:(TagPresentedType) tagPresentedType;
+
+/**
+ * Start inventory tags with specific encoded data type.
+ 
+ @param tagDataEncodeType ex:tagDataEncodeType = UDC | EAN_UPC_EAS;
+ */
+-(void)cmdStartInventoryEx:(TagDataEncodeType) tagDataEncodeType;
+/**
+ Stop Inventory mEPC Tag.
+ Stops the process of tag inventory.
+ @see  didGeneralSuccess:
+ */
+-(void)cmdStopInventory;
+
+
+
+
+
+
+/**
+ Write EPC
+ 
+ @param hexAccessPassword The password of the tag.
+ @param epcData The epc data that is going to write into tag.
+ */
+-(void)cmdWriteEPC:(NSString*)hexAccessPassword EPCData:(NSData*)epcData;
+
+
+/**
+ Write EPC
+ 
+ @param hexAccessPassword Specifies the password to write data.
+ @param memoryBank Specifies which memory bank to write.
+ @param startWordAddress Specifies the start word address of memory bank to write data.When write EPC bank, notice that EPC starts from address 02, the first two 2 words are for CRC and PC.
+ @param data Specifies the data to write to memory bank. 
+ */
+-(void)cmdWriteTag:(NSString*)hexAccessPassword MemoryBank:(MemoryBank)memoryBank StartAddr:(int)startWordAddress Data:(NSData*)data;
+
+/**
+ Write EPC
+ 
+ @param hexSelectedPcEpc Specifies the tag PC EPC to be selected.
+ @param hexAccessPassword Specifies the password to write data.
+ @param memoryBank Specifies which memory bank to write.
+ @param startWordAddress Specifies the start word address of memory bank to write data.When write EPC bank, notice that EPC starts from address 02, the first two 2 words are for CRC and PC.
+ @param data Specifies the data to write to memory bank.
+ */
+-(void)cmdWriteSelectTag:(NSString*)hexSelectedPcEpc PWD:(NSString*)hexAccessPassword MemoryBank:(MemoryBank)memoryBank StartAddr:(int)startWordAddress Data:(NSData*)data;
+/**
+ Read EPC
+ Reads tag data from given memory bank.
+ 
+ @param password Password of the tag that is going to read. (4 byte/2 Hex String)
+ */
+-(void)cmdReadEPC:(NSString*)password;
+
+
+/// Read Tag
+/// @param hexSelectedPcEpc Specifies the tag PC EPC to be selected.
+/// @param hexAccessPassword Specifies the password to write data.
+/// @param memoryBank Specifies which memory bank to write.
+/// @param startWordAddress Specifies the start word address of memory bank to read data.When read EPC bank, notice that EPC starts from address 02, the first two 2 words are for CRC and PC.
+/// @param readLength Specifies the length to read from memory bank.
+-(void)cmdReadTag:(NSString*) hexSelectedPcEpc PWD:(NSString*)hexAccessPassword MemoryBank:(MemoryBank) memoryBank StartAddr:(int)startWordAddress ReadLen:(int)readLength;
+
+/// Read Tag
+/// @param hexAccessPassword Specifies the password to write data.
+/// @param memoryBank Specifies which memory bank to write.
+/// @param startWordAddress Specifies the start word address of memory bank to read data.When read EPC bank, notice that EPC starts from address 02, the first two 2 words are for CRC and PC.
+/// @param readLength Specifies the length to read from memory bank.
+-(void)cmdReadTagWithPWD:(NSString*)hexAccessPassword MemoryBank:(MemoryBank) memoryBank StartAddr:(int)startWordAddress ReadLen:(int)readLength;
+
 /// Use `accessPassword` to Lock the first tag that is inventoried.
 /// @param accessPassword Access Password
 /// @param lockInfos The Lock Action to specified memory bank. see GNPLockInfos.h
@@ -417,6 +416,18 @@ typedef NS_ENUM(Byte, BuzzerAction){
 /// The Access password is decided by the remote connected device.
 /// @param lockInfos The Lock Action to specified memory bank. see GNPLockInfos.h
 -(void)cmdLockTag:(NSMutableArray*)lockInfos;
+
+
+/// Kill Tag
+/// @param hexAccessPassword Access Password
+/// @param hexKillPassword Kill Password
+-(void)cmdKillTag:(NSString*)hexAccessPassword KillPWD:(NSString*)hexKillPassword;
+
+
+/// Kill Tag
+/// @param hexKillPassword Kill Password
+-(void)cmdKillTag:(NSString*)hexKillPassword;
+
 @end
 
 NS_ASSUME_NONNULL_END

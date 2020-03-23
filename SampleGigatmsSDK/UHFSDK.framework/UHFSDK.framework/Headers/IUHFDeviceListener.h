@@ -14,11 +14,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
+
+
+typedef NS_ENUM(Byte, LockAction){
+    LA_UNLOCK          = 0x00,
+    LA_LOCK            = 0x01,
+    LA_PERMA_UNLOCK    = 0x02,
+    LA_PERMA_LOCK      = 0x03,
+};
+
 typedef NS_ENUM(Byte, MemoryBank){
     MBC_Reserve          = 0x00,
     MBC_EPC              = 0x01,
     MBC_TID              = 0x02,
     MBC_UserMemory       = 0x03,
+    MBC_KILL_PASSWORD    = 0x04,
+    MBC_ACCESS_PASSWORD  = 0x05,
 };
 
 typedef NS_ENUM(Byte, MemoryBankSelection){
@@ -49,7 +60,7 @@ typedef NS_ENUM(Byte, KeyboardSimulation){
 
 /**
  multiple
-
+ 
  - OI_TCP_SERVER_1_0: TS800 UR0250
  - OI_Default_1_0: TS800 UR0250
  - OI_HID_N_VCOM: HID
@@ -75,6 +86,19 @@ typedef NS_ENUM(Byte, PostDataDelimiter){
     PDD_TAB             = 0x40,
 };
 
+typedef NS_ENUM(Byte, ActiveMode){
+    AM_READ                     = 0x00,
+    AM_COMMAND                  = 0x01,
+    AM_TAG_ANALYSIS             = 0x04,
+    AM_VERIFY                   = 0x05,
+    AM_ENCODE                   = 0x06,
+    AM_CUSTOMIZED_READ          = 0x07,
+    AM_DEACTIVATE               = 0x08,
+    AM_REACTIVATE               = 0x09,
+    AM_DEACTIVATE_USER_BANK     = 0x0A,
+    AM_REACTIVATE_USER_BANK     = 0x0B,
+};
+
 typedef NS_ENUM(Byte, TagDataEncodeType){
     TDE_UDC             = 0x01,
     TDE_EAN_UPC_EAS     = 0x02,
@@ -83,7 +107,7 @@ typedef NS_ENUM(Byte, TagDataEncodeType){
 };
 /**
  Specifies the repeats mode of sounding the buzzer.
-
+ 
  - BOM_Off: Selects to turn off beep sound
  - BOM_Once: Selects to sound the beep once
  - BOM_Repeat: Selects to repeatly sound the beep
@@ -98,7 +122,7 @@ typedef NS_ENUM(Byte, BuzzerOperationMode){
 
 /**
  Target
-
+ 
  - A: Tagget A selected for S0 to S3.
  - B: Tagget B selected for S0 to S3.
  - A_B: Toggle target A, B for S0 to S3.
@@ -119,7 +143,7 @@ typedef NS_ENUM(Byte, Target){
 
 /**
  Session
-
+ 
  - S0: Session 0 is selected for an inventory round.
  - S1: Session 1 is selected for an inventory round.
  - S2: Session 2 is selected for an inventory round.
@@ -137,7 +161,7 @@ typedef NS_ENUM(Byte, Session){
 
 /**
  TriggerType
-
+ 
  - Command: Command  Trigger
  - DigitalInput: DigitalInput  Trigger
  - Sensor: Sensor  Trigger
@@ -154,7 +178,7 @@ typedef NS_ENUM(Byte, TriggerType){
 
 /**
  RfSensitivityLevel
-
+ 
  - LEVEL_14_HIGHEST: The highest sensitivity level 14.
  - LEVEL_13: The sensitivity level 13.
  - LEVEL_12: The sensitivity level 12.
@@ -192,7 +216,7 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 @optional
 /**
  The operating of invokeApi is success.
-
+ 
  @param strCMDName CMD Name
  */
 -(void)didGeneralSuccess:(NSString*)strCMDName;
@@ -200,7 +224,7 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 /**
  The operating of invokeApi is error.
  Notifies the application that an error has been detected and a suitable response is necessary to process the error condition.
-
+ 
  @param strCMDName CMD Name
  @param strErrorMessage Error Message
  */
@@ -208,7 +232,7 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 
 /**
  Callback of cmdGetFirmwareVersion
-
+ 
  @param fwVer The firmware version of the remote device.
  */
 -(void)didGetFirmwareVersion:(NSString*)fwVer;
@@ -216,21 +240,26 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 
 /**
  Callback of cmdGetBLEFirmwareVersion
-
+ 
  @param fwVer The firmware version of the remote device.
  */
 -(void)didGetBLEFirmwareVersion:(NSString*)fwVer;
-
+/**
+ Callback of cmdGetBLEDeviceName
+ 
+ @param devName The firmware name of the remote device.
+ */
+-(void)didGetBLEDeviceName:(NSString*)devName;
 /**
  Callback of GetRfPower
-
+ 
  @param rfPower rf power of TX
  */
 -(void)didGetRfPower:(int)rfPower;
 
 /**
  Callback of GetSensitivity
-
+ 
  @param rfSensitivity sensitivity of RX
  */
 -(void)didGetSensitivity:(RfSensitivityLevel)rfSensitivity;
@@ -238,21 +267,21 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 /**
  only TS800 & UR0250
  Callback of GetTriggerType
-
+ 
  @param triggerType The trigger source of inventory.
  */
 -(void)didGetTriggerType:(TriggerType)triggerType;
 
 /**
  Callback of GetFrequencyList
-
+ 
  @param frequencys The frequency list of TX RF
  */
 -(void)didGetFrequencyList:(NSArray*)frequencys;
 
 /**
  Callback of ReadEPC
-
+ 
  @param data the Tag data which is going to write to the tag.
  */
 -(void)didReadTag:(NSData*)data;
@@ -277,14 +306,14 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
 
 /**
  Callback of GetQValue
-
+ 
  @param qValue <#qValue description#>
  */
 -(void)didGetQValue:(Byte) qValue;
 
 /**
  Callback of GetBuzzerOperationMode
-
+ 
  @param bom Buzzer Operation Mode
  */
 -(void)didGetBuzzerOperationMode:(BuzzerOperationMode) bom;
@@ -329,24 +358,16 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
  */
 -(void)didGetFilter:(TagDataEncodeType) tagDataEncodeTypes;
 
+
 /**
- * Callback function of `TS100.getPostDataDelimiter`
+ * Callback function of `getPostDataDelimiterAndMemoryBankSelection`
  * <p>
  * Supported: TS100
  *
  * @param postDataDelimiter Specifies the delimiter append to the end of output data.
- */
--(void)didGetPostDataDelimiter:(PostDataDelimiter) postDataDelimiter;
-
-
-/**
- * Callback function of `getMemoryBankSelection`
- * <p>
- * Supported: TS100
- *
  * @param memoryBankSelection Memory Bank Selection setting.
  */
--(void)didGetMemoryBankSelection:(MemoryBankSelection) memoryBankSelection;
+-(void)didGetPostDataDelimiter:(PostDataDelimiter) postDataDelimiter MemoryBankSelection:(MemoryBankSelection) memoryBankSelection;
 
 
 /**
@@ -362,11 +383,15 @@ typedef NS_ENUM(Byte, RfSensitivityLevel){
  * Callback function of getOutputInterfaces
  * <p>
  * Supported: TS100
- *
+ * @param keyboardSimulation Specifies the data keyboard simulation.
  * @param outputInterfaces Specifies the data output interface.
  */
--(void)didGetOutputInterfaces:(KeyboardSimulation) keyboardSimulation :(OutputInterface) outputInterfaces;
-    
+-(void)didGet:(KeyboardSimulation) keyboardSimulation OutputInterfaces:(OutputInterface) outputInterfaces;
+
+
+/// Callback function of GetInventoryActiveMode
+/// @param activeMode Specifies the data  active mode
+-(void)didGetInventoryActiveMode:(ActiveMode) activeMode;
 
 @end
 

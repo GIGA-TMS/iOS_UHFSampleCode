@@ -18,6 +18,7 @@
 @interface GLog : NSObject
 
 +(void)D:(NSString*) message;
++(void)D:(NSString*) title  Msn:(NSString*) message;
 +(void)byNSData:(NSString*) title data:(NSData *) cmdData;
 +(void)byChar:(NSString*) title dataSrc:(const char*) pBuff;
 +(void)byChar:(NSString*) title dataSrc:(const char*) pBuff Len:(int)length;

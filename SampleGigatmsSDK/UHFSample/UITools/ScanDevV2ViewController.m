@@ -67,6 +67,10 @@ UHFScannerDebugCallback>
     [self showAPPSDKVersion];
 }
 
+-(void)viewDidDisappear:(BOOL)animated {
+    [uhfScanner setMUHFScannerCallback:self];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [self refresh];
 }
@@ -220,7 +224,7 @@ UHFScannerDebugCallback>
     BaseDevItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BaseDevScanCell" forIndexPath:indexPath];
     
     BaseDevice* temp = [g_BaseDevs objectAtIndex:indexPath.row];
-    
+    [temp setConnCallback:self];
     if (temp) {
         cell.labDevName.text = temp.getDevInfo.devName;
         cell.labDevInfo.text = temp.getDevInfo.devUidInfo;

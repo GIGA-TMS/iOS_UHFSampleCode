@@ -29,8 +29,6 @@
  */
 -(GTBaseDevInfo*)getDevInfo;
 -(instancetype)init:(GTBaseDevInfo*) baseDevInfo;
--(void)updateDevInfo:(GTBaseDevInfo*)devInfo;
-
 /**
  Description
  https://forums.developer.apple.com/thread/54510
@@ -41,7 +39,7 @@
 -(BOOL)changeBLEGATT:(CBUUID*) send Recieve:(CBUUID*) recieve;
 -(void)Connect;
 -(void)DisConnect;
-- (void)baseConnectionStatusChanged:(GTDevConnStatus)devConnStatus err_code:(int)nErrCode;
+- (void)baseConnectionStatusChanged:(GTDevConnStatus)devConnStatus err_code:(int)nErrCode UID:(NSString*)strUID;
 - (void)didBaseCompleteReadData:(int)read_length data:(NSData*)data;
 - (void)didBaseCompleteWriteData:(int)write_length data:(NSData*)data;
 - (void)didBaseCompleteReadBLEData:(int)read_length data:(NSData*)data channel:(NSString *)channelID;
